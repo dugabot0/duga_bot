@@ -15,7 +15,6 @@ module DugaUtil
     params.store('adult', '1')
 
     uri = URI.parse("http://affapi.duga.jp/search?#{URI.encode_www_form(params)}")
-    puts uri
     hash = get_hash(uri)
     return hash
   end
