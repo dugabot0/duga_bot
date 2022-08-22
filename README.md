@@ -8,7 +8,7 @@ DUGAで販売されているAVタイトルをランダムにつぶやくTwitter�
 * 動作はUbuntuで確認しましたが、ほかのLinux、Mac、WSLでもできると思います。
 * DUGAはアダルトサイトになりますので、ご了承ください。
 * Powered by [DUGAウェブサービス](https://click.duga.jp/aff/api/40413-01)
-## [DUGA](https://click.duga.jp/40413-01)の登録
+## DUGAの登録
 1. [DUGAアフィリエイトサイト](https://click.duga.jp/aff/40413-01)でアフィリエイト登録をする。
 2. 「ウェブサービス」からアプリケーションIDの発行申請をする。
 3. 代理店IDとアプリケーションIDをメモしておく。
@@ -35,8 +35,8 @@ git clone https://github.com/dugabot0/duga_bot.git
 2. 環境変数にDugaのアプリケーションID、代理店IDとTwitterのAPIキーを設定する。ここではAccess TokenとAccess Secretは使いません。
 ```shell
 # 必要であれば.bash_profileなどに以下を追加する。
-export DUGA_APPID='DugaのアプリケーションID'
-export DUGA_AGENTID='Dugaの代理店ID'
+export DUGA_APPID='DUGAのアプリケーションID'
+export DUGA_AGENTID='DUGAの代理店ID'
 export TWITTER_CONSUMER_KEY='TwitterのAPI Key'
 export TWITTER_CONSUMER_SECRET='TwitterのAPI Secret'
 ```
