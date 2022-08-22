@@ -8,7 +8,7 @@ DUGAで販売されているAVタイトルをランダムにつぶやくTwitter�
 動作はUbuntuで確認しましたが、ほかのLinux、Mac、WSLでもできると思います。
 
 ＊DUGAのアプリケーションIDはアダルトサイトになりますので、ご了承ください。
-## [DUGA](https://click.duga.jp/40413-01)の登録Cancel changes
+## [DUGA](https://click.duga.jp/40413-01)の登録
 1. [DUGAアフィリエイトサイト](https://click.duga.jp/aff/40413-01)でアフィリエイト登録をする。
 2. 「ウェブサービス」からアプリケーションIDの発行申請をする。
 3. 代理店IDとアプリケーションIDをメモしておく。
@@ -52,6 +52,7 @@ Enter PIN:
 $ crontab -e
 0 * * * * cd ~/duga_bot; ruby duga_bot.rb  # 毎時0分にツイートする。
 ```
+6. 一度cronが動いてしまえば、特にメンテナンスは必要ないが、`log`ファイルが出力されるので、サイズが大きくなったら定期的に削除する。なお、`tmp`ディレクトリにはTwitter認証情報が記録されているので、消去しないよう注意する。
 
 [^1]: [https://di-acc2.com/system/rpa/9688/](https://di-acc2.com/system/rpa/9688/)などを参考にしてください。
 [^2]: [https://qiita.com/ma2shita/items/5c41aa8a4908c919ba78](https://qiita.com/ma2shita/items/5c41aa8a4908c919ba78)などを参照してください。
