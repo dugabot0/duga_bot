@@ -40,7 +40,7 @@ export TWITTER_CONSUMER_SECRET='TwitterのAPI Secret'
 ```
 git clone https://github.com/dugabot0/duga_bot.git
 ```
-3. 一度、動かしてOauth認証をする。指定されたURLをブラウザで開くとPINコードが表示されるので、そのPINコードを入力してEnterを押す。
+3. 一度、動かしてOauth認証をする。指定されたURLをブラウザで開くとPINコードが表示されるので、そのPINコードを入力してEnterを押す。一度PINコード入力による認証がすめば、次からは認証は省略されます。認証情報は`tmp`ディレクトリに保存されます。
 ```
 $ ruby duga_bot.rb 
 Follow this URL to have a user authorize your app: https://api.twitter.com/oauth/authenticate?oauth_token=xxxx
@@ -52,7 +52,7 @@ Enter PIN:
 $ crontab -e
 0 * * * * cd ~/duga_bot; ruby duga_bot.rb  # 毎時0分にツイートする。
 ```
-6. 一度cronが動いてしまえば、特にメンテナンスは必要ないが、`log`ファイルが出力されるので、サイズが大きくなったら定期的に削除する。なお、`tmp`ディレクトリにはTwitter認証情報が記録されているので、消去しないよう注意する。
+6. 一度cronが動いてしまえば、特にメンテナンスは必要ないが、`log`ファイルが出力されるので、サイズが大きくなったら定期的に削除する。なお、`tmp`ディレクトリにはTwitter認証情報が保存されているので、消去しないよう注意する。
 
 [^1]: [https://di-acc2.com/system/rpa/9688/](https://di-acc2.com/system/rpa/9688/)などを参考にしてください。
 [^2]: [https://qiita.com/ma2shita/items/5c41aa8a4908c919ba78](https://qiita.com/ma2shita/items/5c41aa8a4908c919ba78)などを参照してください。
