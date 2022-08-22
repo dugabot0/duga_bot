@@ -28,7 +28,11 @@ gem install oauth
 gem install typhoeus
 ```
 ## 動作環境の設定
-1. 環境変数にDugaのアプリケーションID、代理店IDとTwitterのAPIキーを設定する。ここではAccess TokenとAccess Secretは使いません。
+1. レポジトリをクローンする。
+```
+git clone https://github.com/dugabot0/duga_bot.git
+```
+2. 環境変数にDugaのアプリケーションID、代理店IDとTwitterのAPIキーを設定する。ここではAccess TokenとAccess Secretは使いません。
 ```shell
 # 必要であれば.bash_profileなどに以下を追加する。
 export DUGA_APPID='DugaのアプリケーションID'
@@ -49,10 +53,6 @@ twitter_v2.rb
   def initialize
     consumer_key = ENV['TWITTER_CONSUMER_KEY']        # ENV['TWITTER_CONSUMER_KEY']をTwitter API Keyにかえる
     consumer_secret = ENV['TWITTER_CONSUMER_SECRET']  # ENV['TWITTER_CONSUMER_SECRET']をTwitter API Secretにかえる
-```
-2. レポジトリをクローンする。
-```
-git clone https://github.com/dugabot0/duga_bot.git
 ```
 3. 一度、動かしてOauth認証をする。指定されたURLをブラウザで開くとPINコードが表示されるので、そのPINコードを入力してEnterを押す。一度PINコード入力による認証がすめば、次からは認証は省略されます。認証情報は`tmp`ディレクトリに保存されます。
 ```
