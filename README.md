@@ -36,6 +36,20 @@ export DUGA_AGENTID='Dugaの代理店ID'
 export TWITTER_CONSUMER_KEY='TwitterのAPI Key'
 export TWITTER_CONSUMER_SECRET='TwitterのAPI Secret'
 ```
+環境変数を設定するかわりにコードに直接アプリケーションIDなどを書いてもかまいません。
+```ruby
+duga_util.rb
+  def self.search_title(params)
+    params.store('version', VERSION)
+    params.store('appid', ENV['DUGA_APPID'])      # ENV['DUGA_APPID']をDUGAのアプリケーションIDにかえる
+    params.store('agentid', ENV['DUGA_AGENTID'])  # ENV['DUGA_AGENTID']をDUGAの代理店IDにかえる
+```
+```ruby
+twitter_v2.rb
+  def initialize
+    consumer_key = ENV['TWITTER_CONSUMER_KEY']        # ENV['TWITTER_CONSUMER_KEY']をTwitter API Keyにかえる
+    consumer_secret = ENV['TWITTER_CONSUMER_SECRET']  # ENV['TWITTER_CONSUMER_SECRET']をTwitter API Secretにかえる
+```
 2. レポジトリをクローンする。
 ```
 git clone https://github.com/dugabot0/duga_bot.git
