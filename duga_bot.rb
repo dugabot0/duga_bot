@@ -97,5 +97,5 @@ twitter = TwitterV2.new
 res = twitter.postTweet(twitter_text)
 log.info(res.code)
 if res.code.to_i != 201
-  log.error("#{JSON.pretty_generate(JSON.parse(response.body))}")
+  log.error("#{JSON.pretty_generate(JSON.parse(res.body))}")
 end
