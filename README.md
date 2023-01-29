@@ -54,7 +54,7 @@ twitter_v2.rb
     consumer_key = ENV['TWITTER_CONSUMER_KEY']        # ENV['TWITTER_CONSUMER_KEY']をTwitter API Keyにかえる
     consumer_secret = ENV['TWITTER_CONSUMER_SECRET']  # ENV['TWITTER_CONSUMER_SECRET']をTwitter API Secretにかえる
 ```
-3. 一度、動かしてOauth認証をする。指定されたURLをブラウザで開くとPINコードが表示されるので、そのPINコードを入力してEnterを押す。一度PINコード入力による認証がすめば、次からは認証は省略されます。認証情報は`tmp`ディレクトリに保存されます。
+3. 一度、動かしてOauth認証をする。指定されたURLをブラウザで開くとPINコードが表示されるので、そのPINコードを入力してEnterを押す。一度PINコード入力による認証がすめば、次からはPIN入力による認証は省略されます。認証情報は`tmp`ディレクトリに保存されます。
 ```
 $ ruby duga_bot.rb 
 Follow this URL to have a user authorize your app: https://api.twitter.com/oauth/authenticate?oauth_token=xxxx
@@ -66,7 +66,9 @@ Enter PIN:
 $ crontab -e
 0 * * * * cd ~/duga_bot; ruby duga_bot.rb  # 毎時0分にツイートする。
 ```
+この際、cronのPATHが設定されていることを確認する。[^3]
 6. 一度cronが動いてしまえば、特にメンテナンスは必要ないが、`log`ファイルが出力されるので、サイズが大きくなったら定期的に削除する。なお、`tmp`ディレクトリにはTwitter認証情報が保存されているので、消去しないよう注意する。
 
 [^1]: [https://di-acc2.com/system/rpa/9688/](https://di-acc2.com/system/rpa/9688/)などを参考にしてください。
 [^2]: [https://qiita.com/ma2shita/items/5c41aa8a4908c919ba78](https://qiita.com/ma2shita/items/5c41aa8a4908c919ba78)などを参照してください。
+[^3]: [https://qiita.com/positrium/items/a2de9af6c5b4d06b504e](https://qiita.com/positrium/items/a2de9af6c5b4d06b504e)
