@@ -69,6 +69,7 @@ class TwitterV2
   end
 
   def postTweet(text)
+    response = ''
     @db.transaction do
       unless access_token = @db["token"]
         # PIN-based OAuth flow - Step 1
@@ -83,7 +84,7 @@ class TwitterV2
 
       json_payload = {"text": text}
       response = create_tweet(@create_tweet_url, oauth_params, json_payload)
-      return response
     end
+    return response
   end
 end
